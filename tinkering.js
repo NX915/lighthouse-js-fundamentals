@@ -1,41 +1,24 @@
 /*
- * Programming Quiz: Facebook Friends (7-5)
+ * Programming Quiz: Donuts Revisited (7-6)
  */
 
 /*
  * QUIZ REQUIREMENTS
- * - Your code should have an object `facebookProfile`
- * - The `facebookProfile` object should have the `name` (string), `friends` (number), and `messages` (array of strings) property
- * - Your `facebookProfile` object should have the `postMessage()`, `deleteMessage()`, `addFriend()` and `removeFriend()` method
- * - Carefully implement the desired functionality of each method, as decribed above
+ * - Your code sshould have an array named `donuts`
+ * - Your `donuts` array should call the `forEach()` method
+ * - Your `forEach()` loop should output the donut summaries
+ * - BE CAREFUL ABOUT THE PUNCTUATION, SPACES, AND EXACT WORDS TO BE PRINTED.
  */
 
-
-// TIP - 
-// In an array, 
-// - addition at the end is done using push() method
-// - addition at a specific index is done using splice() method
-// - deletion from the beginning is done using pop() method
-// - deletion from a specific index is done using splice() method
+// This is an array of objects. 
+var donuts = [
+  { type: "Jelly", cost: 1.22 },
+  { type: "Chocolate", cost: 2.45 },
+  { type: "Cider", cost: 1.59 },
+  { type: "Boston Cream", cost: 5.99 }
+];
 
 // your code goes here
-
-var facebookProfile = {
-  name: 'name',
-  friends: 0,
-  messages: [],
-  postMessage: function (message) {
-    facebookProfile.messages.push(message);
-  },
-  deleteMessage: function (index) {
-    facebookProfile.messages.splice(index, 1);
-  },
-  addFriend: function () {
-    facebookProfile.friends ++;
-  },
-  removeFriend: function () {
-    if (facebookProfile.friends > 0){
-      facebookProfile.friends --;
-    }
-  }
-}
+donuts.forEach(element => {
+  console.log(element.type + ' donuts cost $' + element.cost + ' each');
+});
