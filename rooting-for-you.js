@@ -1,7 +1,7 @@
 const judgeVegetable = function (vegetables, metric) {
   // Your code in here ...
   let biggest = 0, winner;
-  for (element of vegetables) {
+  for (let element of vegetables) {
     if (biggest < element[metric]) {
       biggest = element[metric];
       winner = element.submitter;
