@@ -1,5 +1,5 @@
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  // Code here!
+  // Code here! More complex than required, but works for special cases and many ingredients
   for (let i = 0; i < recipes.length; i++) {
     let matchArr = [false], match = true;//reset match result for new ingredient
     for (let j = 0; j < recipes[i].ingredients.length; j++) {
