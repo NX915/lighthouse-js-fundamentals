@@ -1,24 +1,15 @@
-/*
- * Programming Quiz: Donuts Revisited (7-6)
- */
+const urlEncode = function(text) {
+  text = text.trim();
+  text = text.split('');
+  for (let i = 0 ; i < text.length ; i++){
+    if (text[i] === ' '){ 
+      text[i] = '%20';
+    }
+  }
+  text = text.join('');
+  return text;
+};
 
-/*
- * QUIZ REQUIREMENTS
- * - Your code sshould have an array named `donuts`
- * - Your `donuts` array should call the `forEach()` method
- * - Your `forEach()` loop should output the donut summaries
- * - BE CAREFUL ABOUT THE PUNCTUATION, SPACES, AND EXACT WORDS TO BE PRINTED.
- */
-
-// This is an array of objects. 
-var donuts = [
-  { type: "Jelly", cost: 1.22 },
-  { type: "Chocolate", cost: 2.45 },
-  { type: "Cider", cost: 1.59 },
-  { type: "Boston Cream", cost: 5.99 }
-];
-
-// your code goes here
-donuts.forEach(element => {
-  console.log(element.type + ' donuts cost $' + element.cost + ' each');
-});
+console.log(urlEncode("Lighthouse Labs"));
+console.log(urlEncode(" Lighthouse Labs "));
+console.log(urlEncode("blue is greener than purple for sure"));
