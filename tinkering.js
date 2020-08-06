@@ -1,15 +1,9 @@
-const urlEncode = function(text) {
-  text = text.trim();
-  text = text.split('');
-  for (let i = 0 ; i < text.length ; i++){
-    if (text[i] === ' '){ 
-      text[i] = '%20';
-    }
+arr = [1,2,3,4];
+for (let i=0; i < 5; i++) {
+for (let element of arr) {
+  if (element == 3) {
+    break;
   }
-  text = text.join('');
-  return text;
-};
-
-console.log(urlEncode("Lighthouse Labs"));
-console.log(urlEncode(" Lighthouse Labs "));
-console.log(urlEncode("blue is greener than purple for sure"));
+  console.log(element);
+}
+}
