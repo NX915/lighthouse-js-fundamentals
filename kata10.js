@@ -3,22 +3,18 @@ const chooseRecipe = function(bakeryA, bakeryB, recipes) {
   for (let i = 0; i < recipes.length; i++) {
     let matchArr = [false], match = true;//reset match result for new ingredient
     for (let j = 0; j < recipes[i].ingredients.length; j++) {
-      for (let k = 0; k < bakeryA.length; k++) {//check ingredient against bakeryA
-        if (recipes[i].ingredients[j] === bakeryA[k]) {
-          matchArr[j] = true;
-          break;
-        } else {
-          matchArr[j] = false;
-        }
-      }
-      if (!matchArr[j]) {//check ingredient against bakeryB if not found at A
-        for (let k = 0; k < bakeryB.length; k++) {
-          if (recipes[i].ingredients[j] === bakeryB[k]) {
+      let bakery = [bakeryA, bakeryB];
+      for (let k = 0; k < bakery.length; k ++) {//cycle through bakeries
+        for (let l = 0; l < bakery[k].length; l++) {//check ingredient against bakeries
+          if (recipes[i].ingredients[j] === bakery[k][l]) {
             matchArr[j] = true;
             break;
           } else {
             matchArr[j] = false;
           }
+        }
+        if (matchArr[j]) {
+          break;
         }
       }
     }
